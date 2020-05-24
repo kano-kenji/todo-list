@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import AddToDo from "./components/AddTodo/AddToDo";
+import ListToDos from "./components/ListToDos/ListToDos";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [toDos, setToDos] = useState([]);
+    const [lastId, setLastId] = useState(0);
+
+    const addToList = (toDo) => {
+        setToDos([...toDos, toDo]);
+        setLastId(toDo.id);
+    }
+
+    return (
+        <div className="page-content page-container" id="page-content">
+            <div className="padding">
+                <div className="row container d-flex justify-content-center">
+                    <div className="col-lg-12">
+                        <div className="card px-3">
+                            <div className="card-body">
+                                <h4 className="card-title">Todo list</h4>
+
+                                    <AddToDo addToList={addToList} toDos={toDos} id={lastId}/>
+
+                                    <ListToDos toDos={toDos}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
