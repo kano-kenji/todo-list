@@ -9,13 +9,15 @@ function AddToDo(props) {
     }
 
     const handleSubmit = (event) => {
-        const toDo = {
-            id: props.id + 1,
-            name: toDoName,
-            status: true
-        };
-        props.addToList(toDo);
-        setTodoName('');
+        if(toDoName != ''){
+            const toDo = {
+                id: props.id + 1,
+                name: toDoName,
+                status: true
+            };
+            props.addToList(toDo);
+            setTodoName('');
+        }
         event.preventDefault();
     }
 
