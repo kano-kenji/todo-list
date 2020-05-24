@@ -13,6 +13,10 @@ function ToDoItems(props) {
         props.updateToDo(toDo);
     }
 
+    const handleRemove = () => {
+        props.removeToDo(props.toDo);
+    }
+
     return (
             <li className={completedToDo}>
                 <div className="form-check">
@@ -22,7 +26,7 @@ function ToDoItems(props) {
                         <i className="input-helper"></i>
                     </label>
                 </div>
-                <i className="remove mdi mdi-close-circle-outline"></i>
+                <i className="remove mdi mdi-close-circle-outline" onClick={handleRemove}></i>
             </li>
         );
 }

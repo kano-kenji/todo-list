@@ -17,6 +17,11 @@ function App() {
         setToDo(toDo);
     }
 
+    const removeToDo = (removedToDo) => {
+        const newToDos = toDos.filter((toDo) => removedToDo !== toDo)
+        setToDos(newToDos);
+    }
+
     return (
         <div className="page-content page-container" id="page-content">
             <div className="padding">
@@ -28,7 +33,7 @@ function App() {
 
                                     <AddToDo addToList={addToList} toDos={toDos} id={lastId}/>
 
-                                    <ListToDos updateToDo={updateToDo} toDos={toDos}/>
+                                    <ListToDos updateToDo={updateToDo} removeToDo={removeToDo} toDos={toDos}/>
                             </div>
                         </div>
                     </div>
