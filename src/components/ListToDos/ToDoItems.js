@@ -22,6 +22,7 @@ function ToDoItems(props) {
                         <i className="input-helper"></i>
                     </label>
                 </div>
+                <i className="remove mdi mdi-close-circle-outline"></i>
             </li>
         );
 }

@@ -415,7 +415,7 @@ input[type="checkbox"] {
 
 .mdi:before {
   font-family: FontAwesome;
-  content: "\f00d";
+  content: "\fX";
   display: inline-block;
   padding-right: 3px;
   vertical-align: middle;
