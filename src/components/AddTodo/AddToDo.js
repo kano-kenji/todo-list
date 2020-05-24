@@ -13,7 +13,7 @@ function AddToDo(props) {
             const toDo = {
                 id: props.id + 1,
                 name: toDoName,
-                status: true
+                isDone: false
             };
             props.addToList(toDo);
             setTodoName('');

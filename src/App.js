@@ -6,10 +6,15 @@ import ListToDos from "./components/ListToDos/ListToDos";
 function App() {
     const [toDos, setToDos] = useState([]);
     const [lastId, setLastId] = useState(0);
+    const [toDo, setToDo] = useState({id: 0, name: '', isDone: false});
 
     const addToList = (toDo) => {
         setToDos([...toDos, toDo]);
         setLastId(toDo.id);
+    }
+
+    const updateToDo = (toDo) => {
+        setToDo(toDo);
     }
 
     return (
@@ -23,7 +28,7 @@ function App() {
 
                                     <AddToDo addToList={addToList} toDos={toDos} id={lastId}/>
 
-                                    <ListToDos toDos={toDos}/>
+                                    <ListToDos updateToDo={updateToDo} toDos={toDos}/>
                             </div>
                         </div>
                     </div>
