@@ -4,12 +4,10 @@ import '../../App.css';
 function ToDoItems(props) {
     const toDo = props.toDo;
     const [updatedToDo, setToDo] = useState({id: toDo.id, name: toDo.name, isDone: toDo.isDone});
-    const [completedToDo, setCompletedToDo] = useState(toDo.isDone ? 'completed' : '');
 
     const handleChange = (event) => {
         props.toDo.isDone = event.target.checked
         setToDo(props.toDo);
-        props.toDo.isDone ? setCompletedToDo('completed') : setCompletedToDo('');
         props.updateToDo(toDo);
     }
 
@@ -18,10 +16,10 @@ function ToDoItems(props) {
     }
 
     return (
-            <li className={completedToDo}>
+            <li className={props.toDo.isDone ? 'completed' : ''} id={props.toDo.id}>
                 <div className="form-check">
                     <label className="form-check-label">
-                        <input className="checkbox" type="checkbox" onChange={handleChange}/>
+                        <input className="checkbox" checked={props.toDo.isDone} type="checkbox" onChange={handleChange}/>
                         {toDo.name}
                         <i className="input-helper"></i>
                     </label>
