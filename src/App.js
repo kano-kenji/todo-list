@@ -33,7 +33,7 @@ function App() {
 
                                     <AddToDo addToList={addToList} id={lastId}/>
 
-                                    <ListToDos updateToDo={updateToDo} removeToDo={removeToDo}/>
+                                    <ListToDos updateToDo={updateToDo} removeToDo={removeToDo} toDos={toDos}/>
                             </div>
                         </div>
                     </div>

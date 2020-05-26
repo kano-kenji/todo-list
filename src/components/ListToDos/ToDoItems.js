@@ -8,7 +8,7 @@ function ToDoItems(props) {
     const handleChange = (event) => {
         props.toDo.isDone = event.target.checked
         setToDo(props.toDo);
-        props.updateToDo(toDo);
+        props.updateToDo(updatedToDo);
     }
 
     const handleRemove = () => {
