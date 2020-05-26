@@ -29,7 +29,7 @@ function App() {
                     <div className="col-lg-12">
                         <div className="card px-3">
                             <div className="card-body">
-                                <h4 className="card-title">Todo list</h4>
+                                <h3 className="card-title">Todo list {new Date().toLocaleDateString()}</h3>
                                 <AddToDo addToList={addToList} id={lastId}/>
                                 <ListToDos updateToDo={updateToDo} removeToDo={removeToDo} toDos={toDos}/>
                             </div>
