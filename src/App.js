@@ -30,10 +30,8 @@ function App() {
                         <div className="card px-3">
                             <div className="card-body">
                                 <h4 className="card-title">Todo list</h4>
-
-                                    <AddToDo addToList={addToList} id={lastId}/>
-
-                                    <ListToDos updateToDo={updateToDo} removeToDo={removeToDo} toDos={toDos}/>
+                                <AddToDo addToList={addToList} id={lastId}/>
+                                <ListToDos updateToDo={updateToDo} removeToDo={removeToDo} toDos={toDos}/>
                             </div>
                         </div>
                     </div>
