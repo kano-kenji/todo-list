@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import '../../App.css';
 
-function ToDoItems(props) {
+function ToDoItem(props) {
     const toDo = props.toDo;
     const id = toDo.id;
     const name = toDo.name;
@@ -32,4 +32,4 @@ function ToDoItems(props) {
         );
 }
 
-export default ToDoItems;
+export default ToDoItem;

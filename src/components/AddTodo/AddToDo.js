@@ -9,7 +9,7 @@ function AddToDo(props) {
     }
 
     const handleSubmit = (event) => {
-        if(toDoName != ''){
+        if(toDoName !== ''){
             const toDo = {
                 id: props.id + 1,
                 name: toDoName,
