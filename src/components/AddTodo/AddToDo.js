@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../../App.css';
 
 function AddToDo(props) {
     const [toDoName, setTodoName] = useState('');

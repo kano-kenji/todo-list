@@ -1,5 +1,4 @@
 import React, {Suspense} from 'react';
-import '../../App.css';
 import ToDoItem from "./ToDoItem";
 
 function ListToDos(props) {
