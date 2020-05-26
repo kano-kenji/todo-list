@@ -31,9 +31,9 @@ function App() {
                             <div className="card-body">
                                 <h4 className="card-title">Todo list</h4>
 
-                                    <AddToDo addToList={addToList} toDos={toDos} id={lastId}/>
+                                    <AddToDo addToList={addToList} id={lastId}/>
 
-                                    <ListToDos updateToDo={updateToDo} removeToDo={removeToDo} toDos={toDos}/>
+                                    <ListToDos updateToDo={updateToDo} removeToDo={removeToDo}/>
                             </div>
                         </div>
                     </div>
