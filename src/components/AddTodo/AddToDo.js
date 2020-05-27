@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 function AddToDo(props) {
+
     const [toDoName, setTodoName] = useState('');
 
     const handleChange = (event) => {
@@ -8,13 +9,8 @@ function AddToDo(props) {
     }
 
     const handleSubmit = (event) => {
-        if(toDoName !== ''){
-            const toDo = {
-                id: props.id + 1,
-                name: toDoName,
-                isDone: false
-            };
-            props.addToList(toDo);
+        if(toDoName.trim() !== ''){
+            props.addToList({id: props.id + 1, name: toDoName, isDone: false});
             setTodoName('');
         }
         event.preventDefault();

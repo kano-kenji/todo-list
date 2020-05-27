@@ -1,16 +1,15 @@
 import React, {useState} from 'react';
 
 function ToDoItem(props) {
+
     const toDo = props.toDo;
     const id = toDo.id;
     const name = toDo.name;
     const isDone = toDo.isDone;
-    const [updatedToDo, setToDo] = useState({id: toDo.id, name: toDo.name, isDone: toDo.isDone});
 
-    const handleChange = (event) => {
-        props.toDo.isDone = event.target.checked
-        setToDo(props.toDo);
-        props.updateToDo(updatedToDo);
+    const handleCheckBox = (event) => {
+        props.toDo.isDone = event.target.checked;
+        props.updateToDo(props.toDo);
     }
 
     const handleRemove = () => {
@@ -21,7 +20,7 @@ function ToDoItem(props) {
             <li className={isDone ? 'completed' : ''} id={id}>
                 <div className="form-check">
                     <label className="form-check-label">
-                        <input className="checkbox" checked={isDone} type="checkbox" onChange={handleChange}/>
+                        <input className="checkbox" checked={isDone} type="checkbox" onChange={handleCheckBox}/>
                         {name}
                         <i className="input-helper"></i>
                     </label>

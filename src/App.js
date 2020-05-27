@@ -6,7 +6,6 @@ import ListToDos from "./components/ListToDos/ListToDos";
 function App() {
     const [toDos, setToDos] = useState([]);
     const [lastId, setLastId] = useState(0);
-    const [toDo, setToDo] = useState({id: 0, name: '', isDone: false});
 
     const addToList = (toDo) => {
         setToDos([...toDos, toDo]);
@@ -14,7 +13,14 @@ function App() {
     }
 
     const updateToDo = (toDo) => {
-        setToDo(toDo);
+        const newToDos = toDos.map(el => {
+            if(el.id === toDo.id){
+                return {...el, name: toDo.name, isDone: toDo.isDone}
+            } else {
+                return el;
+            }
+        })
+        setToDos(newToDos);
     }
 
     const removeToDo = (removedToDo) => {
