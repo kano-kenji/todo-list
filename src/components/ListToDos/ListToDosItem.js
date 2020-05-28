@@ -1,15 +1,11 @@
 import React from 'react';
 
-function ToDoItem(props) {
+function ListToDosItem(props) {
 
     const toDo = props.toDo;
-    const id = toDo.id;
-    const name = toDo.name;
-    const isDone = toDo.isDone;
 
     const handleCheckBox = (event) => {
-        props.toDo.isDone = event.target.checked;
-        props.updateToDo(props.toDo);
+        props.updateToDo({...toDo, isDone: event.target.checked});
     }
 
     const handleRemove = () => {
@@ -17,11 +13,11 @@ function ToDoItem(props) {
     }
 
     return (
-            <li className={isDone ? 'completed' : ''} id={id}>
+            <li className={toDo.isDone ? 'completed' : ''}>
                 <div className="form-check">
                     <label className="form-check-label">
-                        <input className="checkbox" checked={isDone} type="checkbox" onChange={handleCheckBox}/>
-                        {name}
+                        <input className="checkbox" checked={toDo.isDone} type="checkbox" onChange={handleCheckBox}/>
+                        {toDo.name}
                         <i className="input-helper"></i>
                     </label>
                 </div>
@@ -30,4 +26,4 @@ function ToDoItem(props) {
         );
 }
 
-export default ToDoItem;
+export default ListToDosItem;
